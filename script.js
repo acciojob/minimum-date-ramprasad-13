@@ -1,5 +1,8 @@
 function minDate(dates) {
-  //write you code here
+  // Convert all date strings to Date objects and find the minimum timestamp
+  const min = new Date(Math.min(...dates.map(date => new Date(date))));
+  // Return it in string format (same format as input)
+  return min.toISOString().slice(0, 10).replace(/-/g, '/');
 }
 
 // Do not change the code
